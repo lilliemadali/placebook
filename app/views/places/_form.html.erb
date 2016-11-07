@@ -1,0 +1,23 @@
+
+<%= form_for(place) do |f| %>
+  <% if place.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(place.errors.count, "error") %> prohibited this place from being saved:</h2>
+
+      <ul>
+      <% place.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :full_street_address%>
+    <%= f.text_field :full_street_address, class: "form-control" %>
+  </div>
+
+  <div class="action">
+    <%= f.submit %>
+  </div>
+<% end %>
